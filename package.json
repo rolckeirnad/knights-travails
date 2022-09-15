@@ -1,0 +1,22 @@
+{
+  "name": "knights-travails",
+  "version": "1.0.0",
+  "description": "In this task we need to build a function `knightMoves` that shows the shortest path possible way to get from one square to another by outputting all squares the knight will stop on along the way.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolckeirnad/knights-travails.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolckeirnad/knights-travails/issues"
+  },
+  "homepage": "https://github.com/rolckeirnad/knights-travails#readme"
+}
