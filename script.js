@@ -37,5 +37,12 @@ function setBoardTree(board, typeOfNode) {
   return board;
 }
 
+function knightMoves([x1, y1] = start, end) {
+  // Get tree of movements
+  const tree = Knight(gameBoard());
+  // Set root as the start coordinates.
+  const root = tree[x1][y1];
+}
+
 function knight(position, board) {
 }
