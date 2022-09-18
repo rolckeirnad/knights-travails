@@ -1,6 +1,6 @@
 function gameBoard() {
   let row = Array(8).fill().map((_, i) => i);
-  let board = row.map((v, _, a) => a.map((_, i) => [v, i]));
+  let board = row.map((v, _, a) => a.map((_, i) => ({ data: `[${[i, v]}]` })));
   return board;
 }
 
@@ -15,7 +15,7 @@ const Node = (data) => {
     f: null,
     g: null,
     h: null,
-  };
+};
   return node;
 };
 
