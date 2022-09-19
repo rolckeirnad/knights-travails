@@ -1,6 +1,6 @@
 function gameBoard() {
   let row = Array(8).fill().map((_, i) => i);
-  let board = row.map((v, _, a) => a.map((_, i) => ({ data: `[${[i, v]}]` })));
+  let board = row.map((v, _, a) => a.map((_, i) => ({ data: `[${[v, i]}]` })));
   return board;
 }
 
