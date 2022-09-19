@@ -37,11 +37,33 @@ function setBoardTree(board, typeOfNode) {
   return board;
 }
 
-function knightMoves([x1, y1] = start, end) {
+function knightMoves(start, [x1, y1] = end) {
   // Get tree of movements
   const tree = Knight(gameBoard());
-  // Set root as the start coordinates.
+  // Set root as the end coordinates
   const root = tree[x1][y1];
+  // Get the shortest path
+  const path = findPath(root, start);
+}
+
+function findPath(node, end) {
+  const keys = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+  let q = []; // Queue
+  let v = []; // Visited nodes
+  q.push({ ...node, next: null });
+  while (q.length !== 0) {
+    const actualNode = q.shift();
+    v.push(actualNode.data);
+    if (actualNode.data === `[${end}]`) return actualNode;
+    for (let key of keys) {
+      // Check if exists edge 
+      if (actualNode[key]) {
+        // Check if edge is neither in q or v
+        if (v.includes(actualNode[key].data) || q.find(node => node.data === actualNode[key].data)) continue;
+        q.push({ ...actualNode[key], next: actualNode });
+      };
+    }
+  }
 }
 
 function knight(position, board) {
