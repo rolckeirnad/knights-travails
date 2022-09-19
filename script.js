@@ -44,6 +44,8 @@ function knightMoves(start, [x1, y1] = end) {
   const root = tree[x1][y1];
   // Get the shortest path
   const path = findPath(root, start);
+  // Call helper function to print shortest path
+  printPathArray(path);
 }
 
 function findPath(node, end) {
@@ -66,5 +68,20 @@ function findPath(node, end) {
   }
 }
 
-function knight(position, board) {
+function printPathArray(path) {
+  const pathArr = stringArray(path);
+  console.log(`You made it in ${pathArr.length - 1} moves! Here's your path: `);
+  pathArr.forEach(coord => console.log(coord));
 }
+
+function stringArray(path, arr = []) {
+  if (path === null || path === undefined) return null;
+  arr.push(path.data);
+  if (path.next === null) return arr;
+  debugger;
+  return stringArray(path.next, arr);
+}
+
+knightMoves([0, 0], [1, 2]); // Output: [[0,0],[1,2]]
+knightMoves([0, 0], [3, 3]); // Output: [[0,0],[1,2],[3,3]]
+knightMoves([3, 3], [0, 0]); // Output: [[3,3],[1,2],[0,0]]
